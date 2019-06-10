@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1560153064594'); /* IE9 */
+  src: url('iconfont.eot?t=1560153064594#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAPIAAsAAAAAB+wAAAN5AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDKIMPATYCJAMQCwoABCAFhG0HRxsAB8gekiSEQAEFAAogwQLxUI29vr3bEIDMRIbHc8ExyVYYIONrRIyuMEBC/6O8qpIshD5pYWbmwEEHvp4+wi/oCeFJvTdOfeLe6R91Hth8VJbLHJM/dQHGAQW2J0YBBVogJcgtw2tdCgd9m0C7aUMxR3UtPPhJZFEgnsiiA/wyDtnQHlqF5oqdKb6Ct9byjr0L4Evw+fgLWeFH0VSRlcf3at1Q8aP/90Jubs9cYzwClNP5IO+jYhNI4kFl4BYuKmzitJu/8bINtGpV+NH/w9HvhT09oDqKoZX+5VEVQTQjrZ1gCxcrP/pzRWI8CmIK/wtVD9CaoHVw6S1wqTgnEZFmqeS9fUFBQwlBoyEwzplwIBHgSh+EXc+Om/F+sH2IbdOKLfNigpXH5l5xPn9uf/Fi+LNntqdPxzEdH8rSXc+fu5dvjtn9gpybu2nT1o0x554+fAqbNs6AnQ9zQs49TmGau2K3RD+zrXhR7EslxzOlt4EfaeyxY7ydPzbnJH/y2JAo3j2HP+mqiish+0ZobNjV61euX68OWRqS46+8c+0akxa+Y/t09sABbgY3XdROB1liZWdQKVTPiJfYVatYlyOvWpllV65gFXi5FSt7Jfif8Ame6Syv6Ex5aF1mblsdlfF94yv6+56A0q+ZQ3xt1j/L5jvEi99BnAPOfvjUkjka0i4S6z59OIsH7Jz45JGLXbCe0RljwToXi7LrGIPRC0GwkLvqN/YFAPUl+5tGfcWN/JffMfKm6OL40JL/rYEJvvcd+imINRK6GeGHKDsr/5yyY09aauLMNDRcYSfTjl+TK2inERoQ6fd+itAQSHyhVVECihZTqFotksneRJMOW2jWahftNtTv7zCA4ES2Yd0ihNDrDIpul6h63SOT/Q5Nhn1Hs97g0O5KRJ7YYTnkgGqCHRS7kXMakl2mITA3DQjbu7A4SXOQtDrg2jHxyGmUmZaRL9djA5Mp1ngmi1mUCkggpo7q0H1Y00xkEVPBLpomUWoVpacLVU9Kc5k6BDhEYA4U5oY4TYPIXEwGwRtMBRTe3wUTTaJxIA2MpqQdRnjIoyOZ0mR0IOsNRifGrTziMZkoC0UJEAFh0iF1yIdptGBCrOppCsyFSiMNyFmKpON+QldD2vIm/Q0PQTtyUkaJGhlNWl5TkzhEHNTqbjRkQcZkvDXVa5IHEwAAAAA=') format('woff2'),
+  url('iconfont.woff?t=1560153064594') format('woff'),
+  url('iconfont.ttf?t=1560153064594') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560153064594#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-storage:before {
+  content: "\ed39";
+}
+
+.icon-Magnifier_px:before {
+  content: "\e6a8";
+}
+
+.icon-user:before {
+  content: "\e626";
+}
+
