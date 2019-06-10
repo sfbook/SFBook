@@ -1,12 +1,11 @@
 <template>
   <div>
     <SfHeader/>
-
     <sfbanner/>
-
     <sftuijian/>
-
     <sfzuixin/>
+    <sfzhuanti/>
+    <sfyousheng/>
   </div>
   
 
@@ -17,6 +16,8 @@ import SfHeader from '@/components/SfHeader.vue';
 import sfbanner from './indexModule/SFbanner.vue'; 
 import sftuijian from './indexModule/TuiJian.vue';
 import sfzuixin from './indexModule/ZuiXin.vue';
+import sfzhuanti from './indexModule/ZhuanTi.vue';
+import sfyousheng from './indexModule/YouSheng.vue'
 
 export default {
     data(){
@@ -35,7 +36,9 @@ export default {
         SfHeader,
         sfbanner,
         sftuijian,
-        sfzuixin
+        sfzuixin,
+        sfzhuanti,
+        sfyousheng
     },
     created(){
       this.gettuijian()
