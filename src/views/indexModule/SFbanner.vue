@@ -9,7 +9,7 @@
 </template>
 <style lang="scss">
 .box {
-  width: 375.2px;
+  width: 100%;
   height: 134.762px;
 }
 .mint-swipe-indicators {
