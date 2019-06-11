@@ -1,9 +1,13 @@
 <template>
-    <SfHeader/>
+    <div>
+       <SfHeader/> 
+       <sfshuping/>
+    </div>   
 </template>
 
 <script>
 import SfHeader from '@/components/SfHeader.vue';
+import sfshuping from './shuping/shuPing.vue';
 export default {
     data(){
         return{
@@ -11,11 +15,12 @@ export default {
         }
     },
     components:{
-        SfHeader
+        SfHeader,
+        sfshuping
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 
 </style>

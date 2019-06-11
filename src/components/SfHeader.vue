@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 @import url(./iconfont/iconfont.css);
 a {
   text-decoration: none;

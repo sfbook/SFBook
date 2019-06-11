@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <SfHeader/>
     <sfbanner/>
     <sftuijian/>
@@ -17,7 +17,7 @@ import sfbanner from './indexModule/SFbanner.vue';
 import sftuijian from './indexModule/TuiJian.vue';
 import sfzuixin from './indexModule/ZuiXin.vue';
 import sfzhuanti from './indexModule/ZhuanTi.vue';
-import sfyousheng from './indexModule/YouSheng.vue'
+import sfyousheng from './indexModule/YouSheng.vue';
 
 export default {
     data(){
@@ -26,11 +26,6 @@ export default {
         }
     },
     methods:{
-      gettuijian(){
-        this.$http.get("https://www.apiopen.top/novelApi?page=1").then(result=>{
-          console.log(result);
-        })
-      }
     },
     components:{
         SfHeader,
@@ -40,9 +35,6 @@ export default {
         sfzhuanti,
         sfyousheng
     },
-    created(){
-      this.gettuijian()
-    }
 }
 </script>
 
@@ -57,6 +49,6 @@ body {
     -webkit-text-size-adjust: 100%;
     font-size: 0.12rem;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding-top: 80px;
 }
 </style>
+

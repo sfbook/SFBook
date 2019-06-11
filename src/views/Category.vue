@@ -12,6 +12,16 @@ export default {
     },
     components:{
         SfHeader
+    },
+    methods:{
+        getshu(){
+            this.$http.get("https://www.apiopen.top/novelInfoApi?name=战神").then(result=>{
+                console.log(result);
+            })
+        }
+    },
+    created(){
+        this.getshu();
     }
 }
 </script>
