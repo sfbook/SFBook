@@ -7,10 +7,11 @@
     </mt-swipe>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .box {
   width: 375.2px;
   height: 134.762px;
+  margin-top: 80px;
 }
 .mint-swipe-indicators {
   .is-active {

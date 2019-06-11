@@ -57,6 +57,5 @@ body {
     -webkit-text-size-adjust: 100%;
     font-size: 0.12rem;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    padding-top: 80px;
 }
 </style>

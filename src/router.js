@@ -21,7 +21,7 @@ export default new Router({
     {
       path: '/vip',
       name: 'vip',
-      component: () => import(/* webpackChunkName: "about" */ './views/Vip.vue'),
+      component: () => import(/* webpackChunkName: "about" */ './views/Vip.vue')
     },
     {
       path: '/lateList',
@@ -53,5 +53,10 @@ export default new Router({
       name: 'search',
       component: () => import(/* webpackChunkName: "about" */ './views/Search.vue'),
     },
+    {
+      path: '/login/',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "about" */ './views/Login.vue'),
+    }
   ]
 })
