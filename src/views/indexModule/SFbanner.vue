@@ -9,7 +9,7 @@
 </template>
 <style lang="scss" scoped>
 .box {
-  width: 375.2px;
+  width: 100%;
   height: 134.762px;
   margin-top: 80px;
 }
