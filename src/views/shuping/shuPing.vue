@@ -19,8 +19,8 @@
           </a>
         </li>
       </ul>
-      <a href="/b/147294/">
-        <ul class="shuping_tips">
+      <a href="###">
+        <ul class="shuping_tips" @click="toDetails(item.bookname)">
           <li>
             <img :src="item.book_cover">
           </li>
@@ -71,6 +71,12 @@ export default {
         this.getshuList();
         this.getpinglun();
     },
+    toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
+    }
   },
   created() {
     this.getshuList();

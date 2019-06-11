@@ -1,7 +1,7 @@
 <template>
   <div class="box">
     <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="(item,i)  in this.imgLis" :key="i">
+      <mt-swipe-item v-for="(item,i)  in this.imgLis" :key="i" @click="toDetails(item.bookname)">
         <img :src="item.book_cover" alt>
       </mt-swipe-item>
     </mt-swipe>
@@ -33,6 +33,14 @@ export default {
     return {
       imgLis: []
     };
+  },
+  methods:{
+    toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
+    }
   },
   created() {
     const that = this;

@@ -3,13 +3,13 @@
     <div class="yousheng">
       <h2>有声轻小说</h2>
       <ul>
-        <li v-for="item in list" :key="item.bid">
+        <li v-for="item in list" :key="item.bid" @click="toDetails(item.bookname)">
           <a href="#">
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
           </a>
         </li>
-        <li v-for="item in twolist" :key="item.bid">
+        <li v-for="item in twolist" :key="item.bid" @click="toDetails(item.bookname)">
           <a href="#">
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
@@ -38,6 +38,12 @@ export default {
       this.$http.get("https://www.apiopen.top/novelApi").then(result => {
         this.twolist = result.body.data;
       });
+    },
+    toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
     }
   },
   created() {

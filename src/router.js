@@ -19,6 +19,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Vip.vue'),
     },
     {
+      path: '/about',
+      name: 'about',
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+    },
+    {
       path: '/lateList',
       name: 'lateList',
       component: () => import(/* webpackChunkName: "about" */ './views/LateList.vue'),
@@ -47,6 +52,11 @@ export default new Router({
       path: '/search/',
       name: 'search',
       component: () => import(/* webpackChunkName: "about" */ './views/Search.vue'),
+    },
+    {
+      path: '/reg/',
+      name: 'reg',
+      component: () => import('./views/Register.vue'),
     },
   ]
 })

@@ -3,13 +3,13 @@
     <div class="zhuanti">
       <h2>专题推荐</h2>
       <ul>
-        <li v-for="item in list" :key="item.bid">
+        <li v-for="item in list" :key="item.bid" @click="toDetails(item.bookname)">
           <a href="#">
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
           </a>
         </li>
-        <li v-for="item in twolist" :key="item.bid">
+        <li v-for="item in twolist" :key="item.bid" @click="toDetails(item.bookname)">
           <a href="#">
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
@@ -43,7 +43,13 @@ export default {
   created() {
     this.getList();
     this.getTwoList();
-  }
+  },
+    toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
+    }
 };
 </script>
 

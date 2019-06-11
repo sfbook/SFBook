@@ -17,6 +17,14 @@ export default {
     components:{
         SfHeader,
         sfshuping
+    },
+    methods:{
+    toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
+    }
     }
 }
 </script>

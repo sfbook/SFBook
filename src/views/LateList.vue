@@ -10,7 +10,7 @@
       </ul>
     </div>
     <div id="page" style="overflow:hidden;" ref="list">
-      <ul class="book_bk_qs1 book_list" v-for="(item,index) in bookList" :key="index">
+      <ul class="book_bk_qs1 book_list" v-for="(item,index) in bookList" :key="index" @click="toDetails(item.bookname)">
         <router-link :to="`/about/${index}/`">
           <li>
             <img :src="item.cover">
@@ -60,6 +60,13 @@ export default {
       this.bool = true;
     }
   },
+  toDetails(data){
+        this.$router.push({
+          path: "/about",
+          query: { name: data }
+        });
+       location.reload()
+    },
   mounted() {
     window.addEventListener("scroll", () => {
       if (this.bool) {
