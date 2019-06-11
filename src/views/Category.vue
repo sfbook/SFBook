@@ -1,9 +1,13 @@
 <template>
-    <SfHeader/>
+    <div>
+       <SfHeader/> 
+       <sffenlei/>
+    </div>
 </template>
 
 <script>
 import SfHeader from '@/components/SfHeader.vue';
+import sffenlei from './fenlei/fenLei.vue';
 export default {
     data(){
         return{
@@ -11,7 +15,8 @@ export default {
         }
     },
     components:{
-        SfHeader
+        SfHeader,
+        sffenlei
     },
     methods:{
         getshu(){

@@ -48,5 +48,10 @@ export default new Router({
       name: 'search',
       component: () => import(/* webpackChunkName: "about" */ './views/Search.vue'),
     },
+    {
+      path: '/reg/',
+      name: 'reg',
+      component: () => import('./views/Register.vue'),
+    },
   ]
 })
