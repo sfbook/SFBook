@@ -1,95 +1,133 @@
 <template>
   <div>
-    <!-- 头部 -->
     <ul class="menu_top_list">
       <li>
         <router-link to="/">
           <span>返回</span>
         </router-link>
       </li>
-      <li>用户注册</li>
+      <li>用户登录</li>
       <li id="Register">
-        <router-link to="/">首页</router-link>
+        <router-link to="/reg">注册</router-link>
       </li>
     </ul>
-    <!-- 内容区域 -->
-    <div class="container">
-      <div class="login">
-        <table>
-          <tbody>
-            <tr>
-              <td class="td1">帐号：</td>
-              <td>
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="请输入登录帐号"
-                  id="username"
-                  class="login_name"
-                  value
-                  v-model="user"
-                >
-                <span style="position:absolute;bottom:0;left:0;">asd</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="td1">密码：</td>
-              <td>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="请输入登录密码"
-                  id="password"
-                  class="login_name"
-                >
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <input type="hidden" name="do" value="check">
-                <input type="submit" value="注 册" class="login_btn">
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <input
-                  type="button"
-                  onclick="window.location.href='https://m.xs74.com/user.php?action=login'"
-                  value="已有账号？点击登录"
-                  class="login_btn"
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="book_Content_style" style="margin-top:0.1rem;padding:0 0.1rem;overflow:hidden;">
+      <ul class="denglu_input">
+        <li>
+          账号 ：
+          <input type="text" placeholder="可输入用户名 / 邮箱 / 手机号" id="LoginName">
+        </li>
+        <li class="book_bk_qs1" style="border-bottom-width:0px;">
+          密码 ：
+          <input id="LoginPassword" type="password">
+        </li>
+        <li class="book_bk_qs1" style="border-bottom-width:0px;">
+          验证码 ：
+          <div id="slipBar" class="nc-container" style="display: block;">
+            <div class="_nc">
+              <div id="nc_1-stage-1" class="stage stage1" style="display: block;">
+                <div ref="box" class="slider">
+                  <div class="label">向右滑动验证</div>
+                  <div class="track" :style="`width:${lefts+26}px;`">
+                    <div class="bg-green" style="width: 321.775px;"></div>
+                  </div>
+                  <div ref="mb" class="button" :style="`left:${lefts}px`"  @touchstart="moves">
+                    <div class="icon nc-iconfont icon-slide-arrow iconfont icon-Magnifier_px" id="nc_1_n1t"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="nc_1-stage-2" class="stage stage2" style="display: none;">
+                <div class="textbox">
+                  <input
+                    class="input"
+                    type="text"
+                    maxlength="6"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  >
+                  <div class="placeholder" style="display: block;">验证码</div>
+                  <div class="icon tip nc-iconfont icon-message"></div>
+                  <div class="icon clear nc-iconfont icon-close-white" style="display: none;"></div>
+                  <div class="icon refresh nc-iconfont icon-refresh"></div>
+                  <img class="code" width="100" height="30" alt>
+                </div>
+                <div class="ope">
+                  <button class="btn-ok" disabled>确 定</button>
+                  <div class="tips">验证码错误，请重新输入</div>
+                </div>
+              </div>
+              <div id="nc_1-stage-3" class="stage stage3" style="display: none;">
+                <div class="title">非常抱歉，这出错了</div>
+                <span class="menu refresh">
+                  <span class="icon nc-iconfont icon-refresh"></span>
+                  <span class="label">刷新</span>
+                </span>
+                <span class="menu nc-sep"></span>
+                <span class="menu feedback">
+                  <span class="icon nc-iconfont icon-message"></span>
+                  <span class="label">反馈</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <span id="Login" style="background:#EF9965;color:#FFF;margin:0.4rem auto;width:0.8rem;height:0.3rem;border-radius:0.15rem;display:-webkit-box;-webkit-box-pack:center;-webkit-box-align: center;">登　录</span>
+    <div class="denglu_logo">第三方账号登录<br>
+        <a href="https://api.weibo.com/oauth2/authorize?client_id=2836361557&amp;response_type=code&amp;redirect_uri=http://passport.sfacg.com/oauth/sina/authsuccess.ashx" target="_blank"><img src="//rs.sfacg.com/web/m/images/weibo.png"></a><a href="https://graph.qq.com/oauth2.0/authorize?client_id=101142681&amp;response_type=code&amp;redirect_uri=http://passport.sfacg.com/oauth/qq/authsuccess.ashx&amp;state=sf" target="_blank"><img src="//rs.sfacg.com/web/m/images/qq.png"></a><a href="https://www.facebook.com/dialog/oauth?client_id=314584345382224&amp;response_type=code&amp;redirect_uri=https://proxypassport.sfacg.com/oauth/facebook/authsuccess-1.ashx&amp;state=sf&amp;&amp;scope=email" target="_blank"><img src="//rs.sfacg.com/web/m/images/fb.png"></a>
+    </div>
+    <div id="bottomNav" style="" v-if="btshow">
+        <i></i>
+        <img src="//rs.sfacg.com/web/m/images/APP_icon.png" width="172" height="30" border="0">
+        <img src="//rs.sfacg.com/web/m/images/APP_D.png" width="65px" height="24px" border="0">
+        <img src="//rs.sfacg.com/web/m/images/APP_Close.png" width="11.5px" height="11.5px" @click="btshow=false">
     </div>
   </div>
 </template>
 
 <script>
+import { setInterval, clearInterval } from 'timers';
 export default {
-  data() {
-    return {
-      user: ""
-    };
-  },
-  methods: {
-    register() {
-      this.$http.get(
-        "https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=1259434245247817&passwd=123654"
-      ).then(result=>{
-          console.log(result);
-      });
+    data(){
+        return{
+            btshow:true,
+            lefts:0
+        }
+    },
+    methods:{
+        moves(ev){
+            document.ontouchmove=(ev)=>{
+                this.lefts = ev.touches[0].clientX - this.$refs.mb.offsetWidth/2 - this.$refs.box.offsetLeft;
+                if(this.lefts <= 0){
+                    this.lefts = 0;
+                }
+                if(this.lefts >= this.$refs.box.offsetWidth - this.$refs.mb.offsetWidth){
+                    this.lefts = this.$refs.box.offsetWidth - this.$refs.mb.offsetWidth;
+                }
+            }
+            document.ontouchend=(ev)=>{
+                document.ontouchmove = null;
+                if(this.lefts < this.$refs.box.offsetWidth - this.$refs.mb.offsetWidth){
+                    const fast = 20;
+                    let timer = setInterval(()=>{
+                        this.lefts -= 40;
+                        if(this.lefts<=0){
+                            this.lefts = 0;
+                            clearInterval(timer);
+                        }
+                    },20)
+                }
+            }
+        }
     }
-  },
-  created(){
-      this.register();
-  }
 };
 </script>
 
 <style lang="scss" scoped>
+@import "../components/iconfont/iconfont.css";
 ul {
   padding: 0px;
   margin: 0;
@@ -139,93 +177,146 @@ a {
 .menu_top_list li:last-child {
   width: 18%;
 }
-.container {
-  margin-top: 5px;
-  font-family: sans-serif;
+
+.book_Content_style {
+    background: #FFF;
+    border-width: 1px 0px;
+    -webkit-border-image: url(//rs.sfacg.com/web/m/images/1px_bk2.png) 2 0 stretch;
+    border-image: url(//rs.sfacg.com/web/m/images/1px_bk2.png) 2 0 stretch;
+    color: #999;
+    background: #FFF;
 }
-table {
-  border-collapse: collapse;
-  display: table;
-  border-collapse: separate;
-  border-spacing: 2px;
-  border-color: grey;
+.denglu_input li {
+    line-height: 0.35rem;
 }
-tbody {
-  display: table-row-group;
-  vertical-align: middle;
-  border-color: inherit;
+.denglu_input input {
+    border: none;
+    color: #666;
+    width: 60%;
 }
-tr {
-  display: table-row;
-  vertical-align: inherit;
-  border-color: inherit;
+input[type=button], input[type=text], input[type=number], input[type=password], textarea {
+    -webkit-appearance: none;
+    outline: 0;
 }
-td {
-  display: table-cell;
-  vertical-align: inherit;
-  position: relative;
-  span {
-  }
+.book_bk_qs1 {
+    border-style: solid;
+    border-width: 1px 0px;
+    -webkit-border-image: url(//rs.sfacg.com/web/m/images/1px_bk_qs2.png) 2 0 stretch;
+    background: #FFF;
 }
-input {
-  -webkit-writing-mode: horizontal-tb !important;
-  text-rendering: auto;
-  color: initial;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  -webkit-appearance: textfield;
-  background-color: white;
-  -webkit-rtl-ordering: logical;
-  cursor: text;
-  margin: 0em;
-  font: 400 13.3333px Arial;
-  padding: 1px 0px;
-  border-width: 2px;
-  border-style: inset;
-  border-color: initial;
-  border-image: initial;
+.nc-container {
+    font-size: 12px;
+    touch-action: none;
 }
-.login_name {
-  border: 1px solid #b7f3f9;
-  height: 25px;
-  width: 98%;
-  border-radius: 3px;
-}
-input[type="hidden" i] {
-  display: none;
-  -webkit-appearance: initial;
-  background-color: initial;
-  cursor: default;
-  padding: initial;
-  border: initial;
-}
-.login {
-  margin: 50px 10px 10px;
-  table {
+._nc {
     width: 100%;
-    .td1 {
-      width: 50px;
-      padding: 20px 0px;
-    }
-  }
+    height: 100%;
+    touch-action: none;
+    font-size: 16px;
 }
-.login_btn {
-  display: block;
-  margin-top: 15px;
-  width: 100%;
-  height: 40px;
-  border: 0 none;
-  background-color: #ef9965;
-  border-radius: 2px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
+._nc .stage1 {
+    height: 55px;
+    position: relative;
+}
+._nc .stage {
+    position: relative;
+    padding: 0 15px;
+}
+._nc .stage1 .slider {
+    position: absolute;
+    height: 52px;
+    box-shadow: 0 0 3px #999;
+    background-color: #ddd;
+    left: 15px;
+    right: 15px;
+}
+
+._nc .stage1 .label {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(.4, #4d4d4d), color-stop(.5, white), color-stop(.6, #4d4d4d), color-stop(1, #4d4d4d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: slidetounlock 3s infinite;
+    -webkit-text-size-adjust: none;
+}
+@-webkit-keyframes slidetounlock{
+    0%{
+        background-position: -200px 0;
+    }
+    100%{
+        background-position: 200px 0;
+    }
+}
+
+._nc .stage1 .track div, ._nc .stage1 .label {
+    line-height: 52px;
+    height: 52px;
+    text-align: center;
+    font-size: 16px;
+}
+
+._nc .stage1 .label {
+    display: block;
+    width: 100%;
+    color: #aaa;
+}
+
+._nc .stage1 .track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+}
+._nc .stage1 .track div {
+    color: #fff;
+}
+._nc .stage1 .bg-green {
+    background-color: #78c430;
+}
+._nc .stage1 .button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 52px;
+    height: 52px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.icon-Magnifier_px{
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.denglu_logo {
+    text-align: center;
+    color: #999;
+}
+.denglu_logo img {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin: 0.2rem;
+}
+#bottomNav {
+    background: rgba(0,0,0,0.8);
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.4rem;
+}
+#bottomNav i {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+#bottomNav img {
+    vertical-align: middle;
+    margin: 0 0.15rem 0 0.05rem;
+}
+#bottomNav img+img+img {
+    float: right;
+    margin: 0.15rem 0.15rem 0 0;
 }
 </style>
