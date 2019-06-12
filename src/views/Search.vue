@@ -52,7 +52,6 @@ export default {
         })
     },
     boback(){
-        console.log(123)
         this.$router.go(-1);
     },
     loadMore(){

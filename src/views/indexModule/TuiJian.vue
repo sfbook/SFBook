@@ -4,13 +4,13 @@
       <h2>人气风向标(更新稳定有特点)</h2>
       <ul>
         <li v-for="item in list" :key="item.bid" @click="toDetails(item.bookname)">
-          <a href="###">
+          <a>
             <img :src="item.book_cover" alt>
             <p>{{item.introduction}}</p>
           </a>
         </li>
         <li v-for="item in twolist" :key="item.bid" @click="toDetails(item.bookname)">
-          <a href="###">
+          <a>
             <img :src="item.book_cover" alt>
             <p>{{item.introduction}}</p>
           </a>

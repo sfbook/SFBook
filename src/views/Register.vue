@@ -3,9 +3,9 @@
     <!-- 头部 -->
     <ul class="menu_top_list">
       <li>
-        <router-link to="/">
+        <a @click="boback">
           <span>返回</span>
-        </router-link>
+        </a>
       </li>
       <li>用户注册</li>
       <li id="Register">
@@ -40,23 +40,24 @@
                   placeholder="请输入登录密码"
                   id="password"
                   class="login_name"
+                  v-model="pw"
                 >
               </td>
             </tr>
             <tr>
               <td colspan="2">
                 <input type="hidden" name="do" value="check">
-                <input type="submit" value="注 册" class="login_btn">
+                <input type="button" value="注 册" class="login_btn" @click="register">
               </td>
             </tr>
             <tr>
               <td colspan="2">
-                <input
+                <router-link to="/my"
                   type="button"
-                  onclick="window.location.href='https://m.xs74.com/user.php?action=login'"
                   value="已有账号？点击登录"
                   class="login_btn"
-                >
+                  tag="input"
+                ></router-link>
               </td>
             </tr>
           </tbody>
@@ -67,24 +68,34 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
 export default {
   data() {
     return {
-      user: ""
+      user: "",
+      pw:"",
     };
   },
   methods: {
     register() {
       this.$http.get(
-        "https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone=1259434245247817&passwd=123654"
+        "https://www.apiopen.top/createUser?key=00d91e8e0cca2b76f515926a36db68f5&phone="+this.user+"&passwd="+this.pw
       ).then(result=>{
-          console.log(result);
+          if(result.body.msg == "用户已注册！"){
+            Toast(result.body.msg);
+          }else if(result.body.msg == "成功!"){
+            Toast("注册成功");
+            location.href="/my";
+          }else{
+            Toast("请完善注册信息");
+          }
+          
       });
+    },
+    boback() {
+      this.$router.go(-1);
     }
   },
-  created(){
-      this.register();
-  }
 };
 </script>
 

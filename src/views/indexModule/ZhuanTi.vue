@@ -4,13 +4,13 @@
       <h2>专题推荐</h2>
       <ul>
         <li v-for="item in list" :key="item.bid" @click="toDetails(item.bookname)">
-          <a href="#">
+          <a>
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
           </a>
         </li>
         <li v-for="item in twolist" :key="item.bid" @click="toDetails(item.bookname)">
-          <a href="#">
+          <a>
             <img :src="item.book_cover" alt>
             <p>{{item.bookname}}</p>
           </a>

@@ -1,9 +1,9 @@
 <template>
   <div class="about">
     <mt-header fixed>
-      <router-link to="/" slot="left">
+      <a @click="boback" slot="left">
         <mt-button icon="back">返回</mt-button>
-      </router-link>
+      </a>
     </mt-header>
     <div class="details">
       <div class="detBox">
@@ -94,6 +94,9 @@ export default {
           query: { name: data }
         });
        location.reload()
+    },
+    boback() {
+      this.$router.go(-1);
     }
   },
   computed: {

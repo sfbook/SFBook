@@ -3,91 +3,91 @@
     <div class="Content_Frame" style="overflow:hidden;">
       <ul class="fenlei">
         <li>
-          <a href="/rank/original.html">
+          <a @click="toDetails('人气')">
             <img src="//rs.sfacg.com/web/m/images/phb_01.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/rank/sale.html">
+          <a @click="toDetails('畅销')">
             <img src="//rs.sfacg.com/web/m/images/phb_02.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/rank/new.html">
+          <a @click="toDetails('新书')">
             <img src="//rs.sfacg.com/web/m/images/phb_03.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/rank/jp.html">
+          <a @click="toDetails('日轻')">
             <img src="//rs.sfacg.com/web/m/images/phb_04.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/rank/bm.html">
+          <a @click="toDetails('收藏')">
             <img src="//rs.sfacg.com/web/m/images/phb_05.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/rank/ticket.html">
+          <a @click="toDetails('月票')">
             <img src="//rs.sfacg.com/web/m/images/phb_06.png">
           </a>
           <br>
         </li>
         <li>
-          <a href="/category/21/">
+          <a @click="toDetails('魔幻')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_21.jpg">
           </a>
           <br>魔幻
         </li>
         <li>
-          <a href="/category/22/">
+          <a @click="toDetails('玄幻')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_22.jpg">
           </a>
           <br>玄幻
         </li>
         <li>
-          <a href="/category/23/">
+          <a @click="toDetails('古风')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_23.jpg">
           </a>
           <br>古风
         </li>
         <li>
-          <a href="/category/24/">
+          <a @click="toDetails('科幻')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_24.jpg">
           </a>
           <br>科幻
         </li>
         <li>
-          <a href="/category/25/">
+          <a @click="toDetails('校园')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_25.jpg">
           </a>
           <br>校园
         </li>
         <li>
-          <a href="/category/26/">
+          <a @click="toDetails('都市')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_26.jpg">
           </a>
           <br>都市
         </li>
         <li>
-          <a href="/category/27/">
+          <a @click="toDetails('游戏')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_27.jpg">
           </a>
           <br>游戏
         </li>
         <li>
-          <a href="/category/28/">
+          <a @click="toDetails('同人')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_28.jpg">
           </a>
           <br>同人
         </li>
         <li>
-          <a href="/category/29/">
+          <a @click="toDetails('悬疑')">
             <img src="//rs.sfacg.com/web/m/images/fenlei_29.jpg">
           </a>
           <br>悬疑
@@ -98,7 +98,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    toDetails(data) {
+      this.$router.push({
+        path: "/xinshu",
+        query: { name: data }
+      });
+    },
+  }
+};
 </script>
 
 <style lang="scss" scoped>

@@ -14,12 +14,12 @@
             </span>
           </div>
           <div style="color:#333;line-height:2em;">{{pinglun[i].top_commentsName}}</div>
-          <a href="###">
+          <a>
             <p>{{pinglun[i].top_commentsContent}}</p>
           </a>
         </li>
       </ul>
-      <a href="###">
+      <a>
         <ul class="shuping_tips" @click="toDetails(item.bookname)">
           <li>
             <img :src="item.book_cover">

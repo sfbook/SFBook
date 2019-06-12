@@ -1,8 +1,8 @@
 <template>
   <div class="box">
     <mt-swipe :auto="4000">
-      <mt-swipe-item v-for="(item,i)  in this.imgLis" :key="i" @click="toDetails(item.bookname)">
-        <img :src="item.book_cover" alt>
+      <mt-swipe-item v-for="(item,i)  in this.imgLis" :key="i">
+        <img :src="item.book_cover" alt @click="toDetails(item.bookname)">
       </mt-swipe-item>
     </mt-swipe>
   </div>

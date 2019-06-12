@@ -58,5 +58,10 @@ export default new Router({
       name: 'reg',
       component: () => import('./views/Register.vue'),
     },
+    {
+      path: '/xinshu/',
+      name: 'xinshu',
+      component: () => import('./views/XinShu.vue'),
+    },
   ]
 })
