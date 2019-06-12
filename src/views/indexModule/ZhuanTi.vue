@@ -38,18 +38,18 @@ export default {
       this.$http.get("https://www.apiopen.top/novelApi?page=6").then(result => {
         this.twolist = result.body.data;
       });
-    }
+    },
+    toDetails(data) {
+    this.$router.push({
+      path: "/about",
+      query: { name: data }
+    });
+  }
   },
   created() {
     this.getList();
     this.getTwoList();
   },
-    toDetails(data){
-        this.$router.push({
-          path: "/about",
-          query: { name: data }
-        });
-    }
 };
 </script>
 
@@ -66,10 +66,10 @@ p {
   margin-top: 12px;
   background-color: #fff;
   height: 450px;
-  .zhuanti{
-      background-color: #fff;
-      height: 450px;
-      overflow: hidden;
+  .zhuanti {
+    background-color: #fff;
+    height: 450px;
+    overflow: hidden;
   }
   h2 {
     margin: 0 2.4%;
